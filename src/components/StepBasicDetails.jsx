@@ -26,13 +26,7 @@ export default function StepBasicDetails({
     </div>
   );
 
-  const isManualBlock = formData.rm.block === 'OTHER_BLOCK';
-  const isManualCluster = formData.rm.cluster === 'OTHER_CLUSTER';
-  const isManualGp = formData.rm.gp === 'OTHER_GP';
-  const isManualSchool = formData.rm.school === 'OTHER_SCHOOL';
-  const isManualTeacher = formData.rm.teacher === 'OTHER_TEACHER';
-  
-  return (
+    return (
     <div className="premium-glass rounded-2xl p-4 sm:p-5 md:p-8">
       <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-[#0072CE] animate-title">IEC Process Tracker</h2>
       <p className="text-center text-slate-600 mb-5 font-medium sm:mb-6">Basic Details</p>

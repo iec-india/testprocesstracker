@@ -50,12 +50,7 @@ export default function StickyFooter({
     }
   };
 
-  const isManualBlock = formData?.rm?.block === 'OTHER_BLOCK';
-  const isManualCluster = formData?.rm?.cluster === 'OTHER_CLUSTER';
-  const isManualGp = formData?.rm?.gp === 'OTHER_GP';
-  const isManualSchool = formData?.rm?.school === 'OTHER_SCHOOL';
-  const isManualTeacher = formData?.rm?.teacher === 'OTHER_TEACHER';
-  
+    
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-[0_-10px_30px_rgba(15,23,42,0.08)]">
       <div className="mx-auto flex max-w-3xl items-center justify-center gap-2 px-3 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:gap-3 sm:px-4">
