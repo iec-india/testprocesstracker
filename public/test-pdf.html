@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PDF Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; }
+    .report { width: 800px; border-radius: 12px; padding: 24px; background: oklch(67% 0.1 250); }
+    .report h1 { color: oklch(25% 0.02 260); }
+    .report .card { background: oklch(96% 0.02 200); padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+    .controls { margin-top: 20px; }
+    button { padding: 10px 14px; font-size: 14px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="report" id="report">
+    <h1>Process Report (OKLCH colors)</h1>
+    <div class="card">Observer: Test User</div>
+    <div class="card">Date: 2026-07-26</div>
+    <div class="card">Total Participation: 5</div>
+  </div>
+  <div class="controls">
+    <button id="download">Download PDF</button>
+  </div>
+  <script type="module">
+    import { generatePdfFromElement } from '/src/utils/generatePdf.js';
+    const btn = document.getElementById('download');
+    btn.addEventListener('click', async () => {
+      try {
+        await generatePdfFromElement(document.getElementById('report'), 'test-report.pdf');
+        alert('PDF generated successfully');
+      } catch (e) {
+        alert('PDF download failed: ' + (e && e.message));
+        console.error(e);
+      }
+    });
+  </script>
+</body>
+</html>
